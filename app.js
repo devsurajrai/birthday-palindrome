@@ -10,13 +10,6 @@ let dateVariationsArr=[]
 let palindromeStatus=false
 let nearestPlaindromeStatus=false
 let noOfDays=0
-let noOfMonths=0
-let nearestPalindromeDate={
-  day:"",
-  month:"",
-  year:""
-}
-
 
 function createDateObj(){
   dateObj={
@@ -40,7 +33,14 @@ function dateVariations(year,month,day){
   let yyyymmdd=""+year+month+day
   let yyyyddmm=""+year+day+month
   let ddyyyymm=""+day+year+month
-  return [ddmmyyyy,mmddyyyy,mmyyyydd,yyyymmdd,yyyyddmm,ddyyyymm]
+  let ddmmyy=""+day+month+year.slice(-2)
+  let mmddyy=""+month+day+year.slice(-2)
+  let mmyydd=""+month+year.slice(-2)+day
+  let yymmdd=""+year.slice(-2)+month+day
+  let yyddmm=""+year.slice(-2)+day+month
+  let ddyymm=""+day+year.slice(-2)+month
+  
+  return [ddmmyyyy,mmddyyyy,mmyyyydd,yyyymmdd,yyyyddmm,ddyyyymm,ddmmyy,mmddyy,mmyydd,yymmdd,yyddmm,ddyymm]
 }
 
 function isPalindrome(datesArr){
@@ -55,7 +55,7 @@ function getMonthDays(month,year){
   
   if(parseInt(month)%2===0){
     if(month===2){
-      if(parseInt(year)%4===0){
+      if(parseInt(year)%4===0 || parseInt(year)%400){
          monthDays=29
       }
       else{
@@ -76,7 +76,7 @@ function getMonthDays(month,year){
 }
 
 function nearestPalindrome(userDOB){
-    for(let k=parseInt(userDOB.year);k<=2021;k++){
+    for(let k=parseInt(userDOB.year);k<=new Date().getFullYear();k++){
       let month=0
       if(k===parseInt(userDOB.year)){
          month=parseInt(userDOB.month)
@@ -88,7 +88,7 @@ function nearestPalindrome(userDOB){
       for(let i=month; i<=12;i++){
           let day=0
           if(i===parseInt(userDOB.month)){
-             day=parseInt(userDOB.day)
+             day=parseInt(userDOB.day)+1
           }
           else{
              day=1
@@ -98,7 +98,7 @@ function nearestPalindrome(userDOB){
           for(let j=day;j<=monthDays;j++){
             if(!nearestPlaindromeStatus){
               tempDateStr=""
-
+              k=""+k
               if(j<10){
                 j="0"+j
               }
@@ -106,16 +106,19 @@ function nearestPalindrome(userDOB){
               i="0"+i
               }
 
-              tempDateStr=""+k+i+j
-              nearestPlaindromeStatus=isPalindrome([tempDateStr])
+              tempDateArr=dateVariations(k,i,j)
+              nearestPlaindromeStatus=isPalindrome(tempDateArr)
+              console.log(tempDateArr)
 
               if(nearestPlaindromeStatus===true){
-                  nearestPalindromeDate.day=j
-                  nearestPalindromeDate.month=i
-                  nearestPalindromeDate.year=""+k
+                  dateObj.day=j
+                  dateObj.month=i
+                  dateObj.year=""+k
               }
                   j=parseInt(j)
                   i=parseInt(i)
+                  k=parseInt(k)
+
                   noOfDays++
             }
           }
@@ -142,8 +145,8 @@ function showIfPalindrome(){
 
 nearestPalindrome(dateObj)
     if(nearestPlaindromeStatus){
-       nearestPalindromeOutput.innerHTML=`Nearest Palindrome Date to your DOB is ${nearestPalindromeDate.year}-${nearestPalindromeDate.month}-${nearestPalindromeDate.day}.
-       You were born ${noOfDays-1} Day/Days Early`
+       nearestPalindromeOutput.innerHTML=`Nearest Palindrome Date to your DOB is ${dateObj.day}-${dateObj.month}-${dateObj.year}.
+       You were born ${noOfDays} Day/Days Early`
        nearestPlaindromeStatus=false
        noOfDays=0
     }
