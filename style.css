@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #0A3F48;
+  --secondary-color: #87FFCD
+}
+
+body {
+
+  background-image: linear-gradient(to left, rgb(97, 204, 204), whitesmoke);
+}
+.container {
+  background-color: white;
+  width: 50%;
+  height: 50%;
+  margin: auto;
+  margin-top: 3%;
+  border-radius: 10px;
+  padding: 50px;
+  font-size: 20px;
+  overflow: none;
+  text-align: center;
+  box-shadow: 2px 2px 10px;
+  
+}
+
+input {
+  width: 350px;
+  height: 60px;
+  margin: 60px;
+  margin-bottom: 30px;
+  font-size: 30px;
+  text-align: center;
+  padding: 15px;
+  border: 2px black solid;
+  border-radius: 15px;
+  cursor: pointer;
+  border:2px solid blue;
+  user-select: none;
+}
+input:hover{
+  border:5px solid blue
+}
+
+button {
+  position: relative;
+  top: 20px;
+  margin-bottom: 20px;
+  width: 150px;
+  height: 60px;
+  border: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 25px;
+  background-color: #2f96f3;
+}
+h1{
+  font-family: ubuntu;
+  font-size: 45px;
+  padding-bottom: 25px;
+}
+
+.first-para{
+  font-size: 30px;
+}
+.output-para{
+  font-weight: bold;
+  padding-top:25px;
+  color:green
+}
+
+.gif{
+  border-radius: 50%;
+  height:200px;
+}
+
+#wait{
+  padding-bottom:15px;
+  font-size: 25px;
+}
+.calculating{
+  display:none
+}
+#reload-page{
+  position: relative;
+  top:38px;
+  padding-left:20px;
+  height:60px
+}
+
+.display-block{
+  display:block
+}
+.display-none{
+  display:none
+}
+
+::-webkit-datetime-edit-text { color: red; padding: 0 0.4em; }
+::-webkit-datetime-edit-month-field { color: blue; }
+::-webkit-datetime-edit-day-field { color: green; }
+::-webkit-datetime-edit-year-field { color: purple; }
