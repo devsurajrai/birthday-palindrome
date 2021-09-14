@@ -52,7 +52,6 @@ function isPalindrome(datesArr){
 }
 
 function getMonthDays(month,year){
-  
   if(parseInt(month)%2===0){
     if(month===2){
       if(parseInt(year)%4===0 || parseInt(year)%400){
