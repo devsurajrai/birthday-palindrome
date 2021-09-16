@@ -2,7 +2,7 @@
 
 This is a basic application which finds out if your birthday is a palindrome or not. If not it shows you the nearest palindrome date to your birthday.
 
-## Try it Live: https://birthday-drom-palin.netlify.app
+#### Try it Live: [Go to the project](https://birthday-drom-palin.netlify.app)
 
 ## Screenshots 👇
 
