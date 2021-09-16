@@ -99,6 +99,43 @@ h1{
   display:none
 }
 
+.list-no-bullets {
+  list-style: none;
+}
+
+.list-item-inline {
+  display: inline;
+
+}
+
+.link {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+
+.footer {
+  font-weight: bold;
+  text-align: center;
+}
+
+.footer-header {
+  padding: 10px;
+  padding-top:50px;
+  padding-left:0px;
+  padding-bottom: 25px;
+  color: black;
+}
+
+
+
+.social-icons{
+  height:40px;
+  width:40px;
+  margin-top: 0px;
+  padding-top: 0px;
+  border-radius: 0%;
+}
+
 ::-webkit-datetime-edit-text { color: red; padding: 0 0.4em; }
 ::-webkit-datetime-edit-month-field { color: blue; }
 ::-webkit-datetime-edit-day-field { color: green; }
