@@ -9,3 +9,5 @@ This is a basic application which finds out if your birthday is a palindrome or 
 ![birthday-palindrome-main](./media/birthday-palindrome-main.png)
 ![birthday-palindrome-waiting](./media/birthday-palindrome-waiting.png)
 ![birthday-palindrome-result](./media/birthday-palindrome-result.png)
+
+Just for the sake of opening a pull request
